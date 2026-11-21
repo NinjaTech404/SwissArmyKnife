@@ -1,0 +1,232 @@
+/* ============================================
+   ExifTool-like Metadata Tool — single card
+   ============================================ */
+
+.meta-tool {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 32px;
+    font-family: 'Aldrich';
+    color: var(--default);
+    overflow-y: auto;
+}
+
+/* ---- Input Zone ---- */
+.meta-input-zone {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.meta-drop-area {
+    width: 100%;
+    max-width: 600px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    background-color: var(--primary);
+    border: 2px dashed var(--separator-color);
+    border-radius: 16px;
+    color: #ffffff77;
+    font-size: 14pt;
+    cursor: pointer;
+    transition: border-color 150ms ease-in-out, color 150ms ease-in-out, background-color 150ms ease-in-out;
+}
+
+.meta-drop-area:hover,
+.meta-drop-area.dragover {
+    border-color: var(--accent-blue);
+    color: var(--default);
+    background-color: #4C8DFF08;
+}
+
+.meta-drop-area > i {
+    font-size: 48px;
+    color: var(--accent-blue);
+}
+
+.meta-status {
+    font-size: 11pt;
+    color: #ffffff77;
+    min-height: 20px;
+    text-align: center;
+}
+
+/* ---- Results Zone ---- */
+.meta-results-zone {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    animation: metaFadeIn 300ms ease-in-out;
+}
+
+@keyframes metaFadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---- THE Single Card ---- */
+.meta-card {
+    width: 100%;
+    max-width: 760px;
+    background-color: var(--tretiary);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Card Header */
+.meta-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 24px;
+    background-color: var(--primary);
+    border-bottom: 1px solid var(--separator-color);
+}
+
+.meta-file-summary {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-width: 0;
+}
+
+.meta-file-summary > i {
+    color: var(--accent-blue);
+    font-size: 28px;
+    flex-shrink: 0;
+}
+
+.meta-file-title {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.meta-file-title > span:first-child {
+    font-size: 13pt;
+    color: var(--default);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.meta-file-size {
+    font-size: 10pt;
+    color: #ffffff77;
+}
+
+.meta-reset-btn {
+    height: 40px;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid var(--separator-color);
+    border-radius: 8px;
+    background-color: var(--secondary);
+    color: var(--default);
+    font-family: 'Aldrich';
+    font-size: 11pt;
+    cursor: pointer;
+    transition: background-color 150ms ease-in-out;
+    flex-shrink: 0;
+}
+
+.meta-reset-btn:hover {
+    background-color: var(--tretiary);
+}
+
+/* Card Body */
+.meta-card-body {
+    display: flex;
+    flex-direction: column;
+    padding: 8px 0;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+/* Section inside the card */
+.meta-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.meta-section + .meta-section {
+    border-top: 1px solid var(--separator-color);
+}
+
+.meta-section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 24px 12px;
+    font-size: 12pt;
+    color: var(--accent-blue);
+    letter-spacing: 0.5px;
+}
+
+.meta-section-header > i {
+    font-size: 16px;
+}
+
+.meta-section-rows {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 12px;
+}
+
+.meta-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+    padding: 8px 24px;
+    font-size: 11pt;
+    line-height: 1.5;
+    transition: background-color 120ms ease-in-out;
+}
+
+.meta-row:hover {
+    background-color: #ffffff05;
+}
+
+.meta-key {
+    color: #ffffff88;
+    flex-shrink: 0;
+    min-width: 120px;
+}
+
+.meta-value {
+    color: var(--default);
+    text-align: right;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    max-width: 65%;
+}
+
+.meta-value.meta-empty {
+    color: #ffffff44;
+    font-style: italic;
+}
+
+/* Scrollbar inside card body */
+.meta-card-body::-webkit-scrollbar {
+    width: 6px;
+}
+.meta-card-body::-webkit-scrollbar-thumb {
+    background-color: var(--separator-color);
+    border-radius: 3px;
+}

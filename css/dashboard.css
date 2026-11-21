@@ -1,0 +1,89 @@
+/* Dashbaord Customization */
+
+:root{
+    --too-card-container-color: #444;
+}
+
+/* Dash Board Content headline */
+.content-body-header{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px; 
+    gap: 0px;
+    position: relative;
+}
+
+.content-body-header > span:first-child{
+    font-family: "Audiowide";
+    font-size: 32pt;
+    color: var(--default);
+}
+
+/* Dash Board Content Container */
+.content-body-container-body{
+    width: 100%;
+    height: auto;
+    padding: 25px;
+    margin-bottom: 50px;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: start;
+    justify-content: center;
+    gap: 25px;
+}
+
+/* Tool Card */
+.tool-card-container{
+    width: 350px;
+    height: auto;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: var(--too-card-container-color);
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 20px;
+    cursor: pointer;
+    transition: ease-in-out 200ms;
+}
+
+.tool-card-container:hover{
+    transform: translateY(-5px) rotate(-2deg) scale(1.05);
+}
+
+.tool-card-header{
+    position: relative;
+    width: 100%;
+}
+
+.tool-card-header > i:first-child{
+    color: var(--default);
+    font-size: 40px;
+}
+
+.tool-card-header > i:last-child{
+    position: absolute;
+    font-size: 24px;
+    right: 0;
+    top: 0;
+    color: var(--accent-blue);
+}
+
+.tool-card-container > span{
+    font-size: 16pt;
+    font-family: "Aldrich";
+    color: var(--default);
+}
+
+.tool-card-container > p {
+    font-size: 12pt;
+    font-family: "Inter";
+    color: var(--default);
+}

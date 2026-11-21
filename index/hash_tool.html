@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swiss Army Knife</title>
+    <base href="../" target="_self">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/hash_tool.css">
+    <link rel="stylesheet" href="assets/icons/bootstrap-icons/bootstrap-icons.css">
+</head>
+<body>
+
+    <!-- Main Container -->
+    <div class="main-container">
+
+        <!-- Side Bar -->
+        <div class="side-bar">
+
+            <!-- Side Bar Header -->
+            <div class="side-bar-header">
+                <i class="bi bi-wrench-adjustable-circle-fill"></i>
+                <span>Swiss Army Knife</span>
+            </div>
+
+            <div class="separator"></div>
+
+            <!-- Side Bar Body -->
+            <div class="side-bar-body">
+
+                <div class="side-bar-option-button">
+                    <i class="bi bi-grid-fill"></i>
+                    <span>Dashboard</span>
+                </div>
+            
+                <div class="side-bar-option-button">
+                    <i class="bi bi-shield-lock-fill"></i>
+                    <span>Password Tool</span>
+                </div>
+            
+                <div class="side-bar-option-button side-bar-option-button-active">
+                    <i class="bi bi-fingerprint"></i>
+                    <span>Hash Tool</span>
+                </div>
+            
+                <div class="side-bar-option-button">
+                    <i class="bi bi-bar-chart-line"></i>
+                    <span>Analytics</span>
+                </div>
+            
+                <div class="side-bar-option-button">
+                    <i class="bi bi-folder2-open"></i>
+                    <span>Projects</span>
+                </div>
+            
+                <div class="side-bar-option-button">
+                    <i class="bi bi-plug"></i>
+                    <span>Integrations</span>
+                </div>
+            
+                <div class="side-bar-option-button">
+                    <i class="bi bi-gear"></i>
+                    <span>Settings</span>
+                </div>
+
+            </div>
+
+            <!-- side bar footer -->
+            <div class="side-bar-footer">
+
+                <div class="side-bar-footer-button">
+                    <i class="bi bi-info-circle-fill"></i>
+                    <span>About Us</span>
+                    <i class="bi bi-box-arrow-up-right"></i>
+                </div>
+
+                <div class="side-bar-footer-button logout-button">
+                    <i class="bi bi-person-circle"></i>
+                    <span>Log Out</span>
+                    <i class="bi bi-box-arrow-right"></i>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Content Body -->
+        <div class="content-body">
+            <!-- Content Header -->
+            <div class="content-header">
+                <div class="side-bar-toggle-button">
+                    <i class="bi bi-layout-sidebar"></i>
+                </div>
+                <div class="content-header-headline">
+                    <i class="bi bi-fingerprint"></i>
+                    <span>Hash Tool</span>
+                </div>
+                <div class="content-header-list-button">
+                    <i class="bi bi-three-dots-vertical"></i>
+                </div>
+            </div>
+
+            <!-- Content Body Container -->
+            <div class="content-body-container">
+                <!-- Hash Tool -->
+                <div class="hash-tool">
+
+                    <!-- Hash Section 1: Text / File Input & Algorithm -->
+                    <div class="hash-tool-section">
+                        <div class="hash-tool-label">
+                            <i class="bi bi-hash"></i>
+                            <span>Generate Hash</span>
+                        </div>
+
+                        <!-- Input Mode Tabs -->
+                        <div class="hash-mode-tabs">
+                            <button class="hash-mode-tab active" data-mode="text" id="mode-text">
+                                <i class="bi bi-fonts"></i> Text
+                            </button>
+                            <button class="hash-mode-tab" data-mode="file" id="mode-file">
+                                <i class="bi bi-file-earmark-arrow-up"></i> File
+                            </button>
+                        </div>
+
+                        <!-- Text Input Area -->
+                        <div class="hash-input-area" id="text-input-area">
+                            <textarea id="hash-text-input" class="hash-textarea" placeholder="Paste or type text here..." spellcheck="false"></textarea>
+                        </div>
+
+                        <!-- File Input Area -->
+                        <div class="hash-input-area" id="file-input-area" style="display: none;">
+                            <div class="hash-file-drop" id="hash-file-drop">
+                                <i class="bi bi-cloud-arrow-up"></i>
+                                <span>Click or drag a file here</span>
+                                <input type="file" id="hash-file-input" hidden>
+                            </div>
+                            <div class="hash-file-info" id="hash-file-info" style="display: none;">
+                                <i class="bi bi-file-earmark-check"></i>
+                                <span id="hash-file-name">filename.ext</span>
+                                <button class="hash-file-clear" id="hash-file-clear"><i class="bi bi-x-lg"></i></button>
+                            </div>
+                        </div>
+
+                        <!-- Algorithm Select -->
+                        <div class="hash-algo-wrapper">
+                            <label for="hash-algorithm">Algorithm</label>
+                            <select id="hash-algorithm" class="hash-select">
+                                <option value="SHA-256">SHA-256</option>
+                                <option value="SHA-512">SHA-512</option>
+                                <option value="SHA-384">SHA-384</option>
+                                <option value="SHA-1">SHA-1</option>
+                                <option value="MD5">MD5</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <!-- Hash Section 2: Result & Verify -->
+                    <div class="hash-tool-section">
+                        <div class="hash-tool-label">
+                            <i class="bi bi-shield-check"></i>
+                            <span>Result & Verify</span>
+                        </div>
+
+                        <!-- Output Field -->
+                        <div class="hash-output-wrapper">
+                            <input type="text" id="hash-output" class="hash-output" placeholder="Hash will appear here..." readonly>
+                            <button class="hash-copy-button" id="hash-copy" title="Copy hash">
+                                <i class="bi bi-clipboard"></i>
+                                <span>Copy</span>
+                            </button>
+                        </div>
+
+                        <!-- Verify Input -->
+                        <div class="hash-verify-wrapper">
+                            <i class="bi bi-check2-circle"></i>
+                            <input type="text" id="hash-verify-input" class="hash-verify-input" placeholder="Paste a hash to verify against..." autocomplete="off" spellcheck="false">
+                            <button class="hash-verify-button" id="hash-verify-button">
+                                <span>Verify</span>
+                            </button>
+                        </div>
+
+                        <!-- Verify Result -->
+                        <div class="hash-verify-result" id="hash-verify-result" style="display: none;">
+                            <i class="bi bi-check-circle-fill" id="hash-verify-icon"></i>
+                            <span id="hash-verify-text">Match</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+    <!-- Additional Component -->
+
+    <div class="dialogue">
+        <div class="dialogue-container">
+            <!-- Dialogue Header -->
+            <div class="dialogue-header">
+                <i class="bi bi-exclamation-triangle-fill"></i>
+                <span>Warning</span>
+            </div>
+            <!-- Dialogue Body -->
+            <div class="dialogue-body">
+                <span>Are you sure you want to logout?</span>
+            </div>
+            <!-- Dialogue Footer -->
+            <div class="dialogue-footer">
+                <button class="dialogue-left-button">Cancel</button>
+                <button class="dialogue-right-button">Proceed</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="js/global.js"></script>
+    <script src="js/hash_tool.js"></script>
+</body>
+</html>

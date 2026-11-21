@@ -1,0 +1,179 @@
+/* ============================================
+   Encoder / Decoder Tool
+   ============================================ */
+
+.codec-tool {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 20px;
+    padding: 32px;
+    font-family: 'Aldrich';
+    color: var(--default);
+    overflow-y: auto;
+}
+
+/* ---- Card ---- */
+.codec-card {
+    width: 420px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    background-color: var(--tretiary);
+    padding: 20px;
+    border-radius: 16px;
+}
+
+.codec-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Aldrich';
+    font-size: 16pt;
+    color: var(--default);
+}
+
+.codec-label > i {
+    color: var(--accent-blue);
+    font-size: 22px;
+}
+
+/* ---- Mode Tabs ---- */
+.codec-mode-tabs {
+    display: flex;
+    gap: 8px;
+}
+
+.codec-tab {
+    flex: 1;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: var(--primary);
+    border: 1px solid var(--separator-color);
+    border-radius: 8px;
+    color: #ffffff88;
+    font-family: 'Aldrich';
+    font-size: 11pt;
+    cursor: pointer;
+    transition: all 150ms ease-in-out;
+}
+
+.codec-tab:hover {
+    border-color: var(--accent-blue);
+    color: var(--default);
+}
+
+.codec-tab.active {
+    background-color: var(--content-body-header-color);
+    border-color: var(--content-body-header-color);
+    color: var(--default);
+}
+
+/* ---- Input ---- */
+.codec-input {
+    width: 100%;
+    height: 90px;
+    background-color: var(--primary);
+    border: 1px solid var(--separator-color);
+    border-radius: 8px;
+    padding: 10px 14px;
+    color: var(--default);
+    font-family: 'Aldrich';
+    font-size: 11pt;
+    resize: vertical;
+    outline: none;
+    transition: border-color 150ms ease-in-out;
+}
+
+.codec-input:focus {
+    border-color: var(--accent-blue);
+}
+
+.codec-input::placeholder {
+    color: #ffffff55;
+}
+
+/* ---- Output ---- */
+.codec-output-wrapper {
+    width: 100%;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--primary);
+    border: 1px solid var(--separator-color);
+    border-radius: 8px;
+    padding: 0 8px 0 14px;
+}
+
+.codec-output {
+    flex: 1;
+    height: 100%;
+    background: none;
+    border: none;
+    outline: none;
+    color: var(--default);
+    font-family: 'Aldrich';
+    font-size: 11pt;
+    min-width: 0;
+}
+
+.codec-output::placeholder {
+    color: #ffffff55;
+}
+
+/* ---- Copy Button ---- */
+.codec-copy {
+    width: 36px;
+    height: 36px;
+    display: grid;
+    place-items: center;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--secondary);
+    color: var(--default);
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 150ms ease-in-out;
+    flex-shrink: 0;
+}
+
+.codec-copy:hover { background-color: var(--tretiary); }
+.codec-copy.copied { background-color: var(--content-body-header-color); }
+
+/* ---- Caesar Shift ---- */
+.codec-shift-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.codec-shift-wrapper > label {
+    font-size: 11pt;
+    color: #ffffffaa;
+}
+
+.codec-shift {
+    width: 80px;
+    height: 36px;
+    background-color: var(--primary);
+    border: 1px solid var(--separator-color);
+    border-radius: 8px;
+    padding: 0 12px;
+    color: var(--default);
+    font-family: 'Aldrich';
+    font-size: 11pt;
+    outline: none;
+    transition: border-color 150ms ease-in-out;
+}
+
+.codec-shift:focus {
+    border-color: var(--accent-blue);
+}

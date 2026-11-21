@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swiss Army Knife</title>
+    <base href="../" target="_self">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/exiftool.css">
+    <link rel="stylesheet" href="assets/icons/bootstrap-icons/bootstrap-icons.css">
+</head>
+<body>
+
+    <!-- Main Container -->
+    <div class="main-container">
+
+        <!-- Side Bar -->
+        <div class="side-bar">
+
+            <!-- Side Bar Header -->
+            <div class="side-bar-header">
+                <i class="bi bi-wrench-adjustable-circle-fill"></i>
+                <span>Swiss Army Knife</span>
+            </div>
+
+            <div class="separator"></div>
+
+            <!-- Side Bar Body -->
+            <div class="side-bar-body">
+
+                <div class="side-bar-option-button">
+                    <i class="bi bi-grid-fill"></i>
+                    <span>Dashboard</span>
+                </div>
+            
+                <div class="side-bar-option-button">
+                    <i class="bi bi-shield-lock-fill"></i>
+                    <span>Password Tool</span>
+                </div>
+            
+                <div class="side-bar-option-button">
+                    <i class="bi bi-fingerprint"></i>
+                    <span>Hash Tool</span>
+                </div>
+            
+                <div class="side-bar-option-button">
+                    <i class="bi bi-lock-fill"></i>
+                    <span>Encoder Tool</span>
+                </div>
+            
+                <div class="side-bar-option-button">
+                    <i class="bi bi-file-earmark-zip-fill"></i>
+                    <span>Compress Tool</span>
+                </div>
+            
+                <div class="side-bar-option-button side-bar-option-button-active">
+                    <i class="bi bi-file-earmark-text-fill"></i>
+                    <span>Exiftool</span>
+                </div>
+            
+                <div class="side-bar-option-button">
+                    <i class="bi bi-gear"></i>
+                    <span>Settings</span>
+                </div>
+
+            </div>
+
+            <!-- side bar footer -->
+            <div class="side-bar-footer">
+
+                <div class="side-bar-footer-button">
+                    <i class="bi bi-info-circle-fill"></i>
+                    <span>About Us</span>
+                    <i class="bi bi-box-arrow-up-right"></i>
+                </div>
+
+                <div class="side-bar-footer-button logout-button">
+                    <i class="bi bi-person-circle"></i>
+                    <span>Log Out</span>
+                    <i class="bi bi-box-arrow-right"></i>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Content Body -->
+        <div class="content-body">
+            <!-- Content Header -->
+            <div class="content-header">
+                <div class="side-bar-toggle-button">
+                    <i class="bi bi-layout-sidebar"></i>
+                </div>
+                <div class="content-header-headline">
+                    <i class="bi bi-file-earmark-zip-fill"></i>
+                    <span>Compresssion Tool</span>
+                </div>
+                <div class="content-header-list-button">
+                    <i class="bi bi-three-dots-vertical"></i>
+                </div>
+            </div>
+
+            <!-- Content Body Container -->
+            <div class="content-body-container">
+              <!-- ExifTool-like Metadata Tool -->
+                <div class="meta-tool">
+
+                    <!-- Input Zone (disappears after processing) -->
+                    <div class="meta-input-zone" id="meta-input-zone">
+                        <div class="meta-drop-area" id="meta-drop-area">
+                            <i class="bi bi-cloud-arrow-up"></i>
+                            <span>Click or drag a file here to extract metadata</span>
+                            <input type="file" id="meta-file-input" hidden>
+                        </div>
+                        <div class="meta-status" id="meta-status"></div>
+                    </div>
+
+                    <!-- Results Zone (single card) -->
+                    <div class="meta-results-zone" id="meta-results-zone" style="display: none;">
+
+                        <div class="meta-card">
+
+                            <!-- Card Header -->
+                            <div class="meta-card-header">
+                                <div class="meta-file-summary">
+                                    <i class="bi bi-file-earmark-check-fill"></i>
+                                    <div class="meta-file-title">
+                                        <span id="meta-file-name">filename.ext</span>
+                                        <span class="meta-file-size" id="meta-file-size">0 KB</span>
+                                    </div>
+                                </div>
+                                <button class="meta-reset-btn" id="meta-reset-btn">
+                                    <i class="bi bi-arrow-counterclockwise"></i> New File
+                                </button>
+                            </div>
+
+                            <!-- Card Body: sections injected by JS -->
+                            <div class="meta-card-body" id="meta-card-body">
+                                <!-- Sections will be injected here -->
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Additional Component -->
+
+    <div class="dialogue">
+        <div class="dialogue-container">
+            <!-- Dialogue Header -->
+            <div class="dialogue-header">
+                <i class="bi bi-exclamation-triangle-fill"></i>
+                <span>Warning</span>
+            </div>
+            <!-- Dialogue Body -->
+            <div class="dialogue-body">
+                <span>Are you sure you want to logout?</span>
+            </div>
+            <!-- Dialogue Footer -->
+            <div class="dialogue-footer">
+                <button class="dialogue-left-button">Cancel</button>
+                <button class="dialogue-right-button">Proceed</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="js/global.js"></script>
+    <script src="js/exiftool.js"></script>
+</body>
+</html>

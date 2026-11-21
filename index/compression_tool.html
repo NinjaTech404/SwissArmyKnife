@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swiss Army Knife</title>
+    <base href="../" target="_self">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/compression_tool.css">
+    <link rel="stylesheet" href="assets/icons/bootstrap-icons/bootstrap-icons.css">
+</head>
+<body>
+
+    <!-- Main Container -->
+    <div class="main-container">
+
+        <!-- Side Bar -->
+        <div class="side-bar">
+
+            <!-- Side Bar Header -->
+            <div class="side-bar-header">
+                <i class="bi bi-wrench-adjustable-circle-fill"></i>
+                <span>Swiss Army Knife</span>
+            </div>
+
+            <div class="separator"></div>
+
+            <!-- Side Bar Body -->
+            <div class="side-bar-body">
+
+                <div class="side-bar-option-button">
+                    <i class="bi bi-grid-fill"></i>
+                    <span>Dashboard</span>
+                </div>
+            
+                <div class="side-bar-option-button">
+                    <i class="bi bi-shield-lock-fill"></i>
+                    <span>Password Tool</span>
+                </div>
+            
+                <div class="side-bar-option-button">
+                    <i class="bi bi-fingerprint"></i>
+                    <span>Hash Tool</span>
+                </div>
+            
+                <div class="side-bar-option-button">
+                    <i class="bi bi-lock-fill"></i>
+                    <span>Encoder Tool</span>
+                </div>
+            
+                <div class="side-bar-option-button side-bar-option-button-active">
+                    <i class="bi bi-file-earmark-zip-fill"></i>
+                    <span>Compress Tool</span>
+                </div>
+            
+                <div class="side-bar-option-button">
+                    <i class="bi bi-plug"></i>
+                    <span>Integrations</span>
+                </div>
+            
+                <div class="side-bar-option-button">
+                    <i class="bi bi-gear"></i>
+                    <span>Settings</span>
+                </div>
+
+            </div>
+
+            <!-- side bar footer -->
+            <div class="side-bar-footer">
+
+                <div class="side-bar-footer-button">
+                    <i class="bi bi-info-circle-fill"></i>
+                    <span>About Us</span>
+                    <i class="bi bi-box-arrow-up-right"></i>
+                </div>
+
+                <div class="side-bar-footer-button logout-button">
+                    <i class="bi bi-person-circle"></i>
+                    <span>Log Out</span>
+                    <i class="bi bi-box-arrow-right"></i>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Content Body -->
+        <div class="content-body">
+            <!-- Content Header -->
+            <div class="content-header">
+                <div class="side-bar-toggle-button">
+                    <i class="bi bi-layout-sidebar"></i>
+                </div>
+                <div class="content-header-headline">
+                    <i class="bi bi-file-earmark-zip-fill"></i>
+                    <span>Compresssion Tool</span>
+                </div>
+                <div class="content-header-list-button">
+                    <i class="bi bi-three-dots-vertical"></i>
+                </div>
+            </div>
+
+            <!-- Content Body Container -->
+            <div class="content-body-container">
+                <!-- Compression / Decompression Tool -->
+                <div class="compress-tool">
+
+                    <!-- CARD: GZIP (Native) -->
+                    <div class="compress-card">
+                        <div class="compress-label">
+                            <i class="bi bi-file-zip"></i>
+                            <span>GZIP</span>
+                        </div>
+                        <div class="compress-mode-tabs">
+                            <button class="compress-tab active" data-format="gzip" data-mode="compress">
+                                <i class="bi bi-arrow-down-circle"></i> Compress
+                            </button>
+                            <button class="compress-tab" data-format="gzip" data-mode="decompress">
+                                <i class="bi bi-arrow-up-circle"></i> Decompress
+                            </button>
+                        </div>
+                        <div class="compress-file-drop" id="gzip-drop">
+                            <i class="bi bi-cloud-arrow-up"></i>
+                            <span>Click or drag a file here</span>
+                            <input type="file" id="gzip-input" hidden>
+                        </div>
+                        <div class="compress-file-info" id="gzip-info" style="display:none;">
+                            <i class="bi bi-file-earmark-check"></i>
+                            <span id="gzip-name">file</span>
+                            <button class="compress-clear" data-format="gzip"><i class="bi bi-x-lg"></i></button>
+                        </div>
+                        <div class="compress-actions">
+                            <button class="compress-run" id="gzip-run" disabled>
+                                <i class="bi bi-play-fill"></i> Run
+                            </button>
+                            <a class="compress-download" id="gzip-download" style="display:none;">
+                                <i class="bi bi-download"></i> Download
+                            </a>
+                        </div>
+                        <div class="compress-status" id="gzip-status"></div>
+                    </div>
+
+                    <!-- CARD: ZIP (Via JSZip) -->
+                    <div class="compress-card">
+                        <div class="compress-label">
+                            <i class="bi bi-file-zip-fill"></i>
+                            <span>ZIP</span>
+                        </div>
+                        <div class="compress-mode-tabs">
+                            <button class="compress-tab active" data-format="zip" data-mode="compress">
+                                <i class="bi bi-arrow-down-circle"></i> Compress
+                            </button>
+                            <button class="compress-tab" data-format="zip" data-mode="decompress">
+                                <i class="bi bi-arrow-up-circle"></i> Decompress
+                            </button>
+                        </div>
+                        <div class="compress-file-drop" id="zip-drop">
+                            <i class="bi bi-cloud-arrow-up"></i>
+                            <span>Click or drag a .zip file</span>
+                            <input type="file" id="zip-input" hidden accept=".zip">
+                        </div>
+                        <div class="compress-file-info" id="zip-info" style="display:none;">
+                            <i class="bi bi-file-earmark-check"></i>
+                            <span id="zip-name">file</span>
+                            <button class="compress-clear" data-format="zip"><i class="bi bi-x-lg"></i></button>
+                        </div>
+                        <div class="compress-actions">
+                            <button class="compress-run" id="zip-run" disabled>
+                                <i class="bi bi-play-fill"></i> Run
+                            </button>
+                            <a class="compress-download" id="zip-download" style="display:none;">
+                                <i class="bi bi-download"></i> Download
+                            </a>
+                        </div>
+                        <div class="compress-status" id="zip-status"></div>
+                    </div>
+
+                    <!-- CARD: 7Z (Requires WASM — placeholder) -->
+                    <div class="compress-card">
+                        <div class="compress-label">
+                            <i class="bi bi-archive"></i>
+                            <span>7Z</span>
+                        </div>
+                        <div class="compress-mode-tabs">
+                            <button class="compress-tab active" data-format="7z" data-mode="compress">
+                                <i class="bi bi-arrow-down-circle"></i> Compress
+                            </button>
+                            <button class="compress-tab" data-format="7z" data-mode="decompress">
+                                <i class="bi bi-arrow-up-circle"></i> Decompress
+                            </button>
+                        </div>
+                        <div class="compress-file-drop" id="7z-drop">
+                            <i class="bi bi-cloud-arrow-up"></i>
+                            <span>Click or drag a .7z file</span>
+                            <input type="file" id="7z-input" hidden accept=".7z">
+                        </div>
+                        <div class="compress-file-info" id="7z-info" style="display:none;">
+                            <i class="bi bi-file-earmark-check"></i>
+                            <span id="7z-name">file</span>
+                            <button class="compress-clear" data-format="7z"><i class="bi bi-x-lg"></i></button>
+                        </div>
+                        <div class="compress-actions">
+                            <button class="compress-run" id="7z-run" disabled>
+                                <i class="bi bi-play-fill"></i> Run
+                            </button>
+                            <a class="compress-download" id="7z-download" style="display:none;">
+                                <i class="bi bi-download"></i> Download
+                            </a>
+                        </div>
+                        <div class="compress-status" id="7z-status">Requires WASM library (e.g., libarchive.js)</div>
+                    </div>
+
+                    <!-- CARD: TAR.XZ (Requires WASM — placeholder) -->
+                    <div class="compress-card">
+                        <div class="compress-label">
+                            <i class="bi bi-archive-fill"></i>
+                            <span>TAR.XZ</span>
+                        </div>
+                        <div class="compress-mode-tabs">
+                            <button class="compress-tab active" data-format="tar.xz" data-mode="compress">
+                                <i class="bi bi-arrow-down-circle"></i> Compress
+                            </button>
+                            <button class="compress-tab" data-format="tar.xz" data-mode="decompress">
+                                <i class="bi bi-arrow-up-circle"></i> Decompress
+                            </button>
+                        </div>
+                        <div class="compress-file-drop" id="tarxz-drop">
+                            <i class="bi bi-cloud-arrow-up"></i>
+                            <span>Click or drag a .tar.xz file</span>
+                            <input type="file" id="tarxz-input" hidden accept=".tar.xz,.txz">
+                        </div>
+                        <div class="compress-file-info" id="tarxz-info" style="display:none;">
+                            <i class="bi bi-file-earmark-check"></i>
+                            <span id="tarxz-name">file</span>
+                            <button class="compress-clear" data-format="tar.xz"><i class="bi bi-x-lg"></i></button>
+                        </div>
+                        <div class="compress-actions">
+                            <button class="compress-run" id="tarxz-run" disabled>
+                                <i class="bi bi-play-fill"></i> Run
+                            </button>
+                            <a class="compress-download" id="tarxz-download" style="display:none;">
+                                <i class="bi bi-download"></i> Download
+                            </a>
+                        </div>
+                        <div class="compress-status" id="tarxz-status">Requires WASM library (e.g., libarchive.js)</div>
+                    </div>
+
+                    <!-- CARD: ZSTD (Requires WASM — placeholder) -->
+                    <div class="compress-card">
+                        <div class="compress-label">
+                            <i class="bi bi-lightning-charge"></i>
+                            <span>ZSTD</span>
+                        </div>
+                        <div class="compress-mode-tabs">
+                            <button class="compress-tab active" data-format="zstd" data-mode="compress">
+                                <i class="bi bi-arrow-down-circle"></i> Compress
+                            </button>
+                            <button class="compress-tab" data-format="zstd" data-mode="decompress">
+                                <i class="bi bi-arrow-up-circle"></i> Decompress
+                            </button>
+                        </div>
+                        <div class="compress-file-drop" id="zstd-drop">
+                            <i class="bi bi-cloud-arrow-up"></i>
+                            <span>Click or drag a .zst file</span>
+                            <input type="file" id="zstd-input" hidden accept=".zst">
+                        </div>
+                        <div class="compress-file-info" id="zstd-info" style="display:none;">
+                            <i class="bi bi-file-earmark-check"></i>
+                            <span id="zstd-name">file</span>
+                            <button class="compress-clear" data-format="zstd"><i class="bi bi-x-lg"></i></button>
+                        </div>
+                        <div class="compress-actions">
+                            <button class="compress-run" id="zstd-run" disabled>
+                                <i class="bi bi-play-fill"></i> Run
+                            </button>
+                            <a class="compress-download" id="zstd-download" style="display:none;">
+                                <i class="bi bi-download"></i> Download
+                            </a>
+                        </div>
+                        <div class="compress-status" id="zstd-status">Requires WASM library (e.g., libarchive.js)</div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Additional Component -->
+
+    <div class="dialogue">
+        <div class="dialogue-container">
+            <!-- Dialogue Header -->
+            <div class="dialogue-header">
+                <i class="bi bi-exclamation-triangle-fill"></i>
+                <span>Warning</span>
+            </div>
+            <!-- Dialogue Body -->
+            <div class="dialogue-body">
+                <span>Are you sure you want to logout?</span>
+            </div>
+            <!-- Dialogue Footer -->
+            <div class="dialogue-footer">
+                <button class="dialogue-left-button">Cancel</button>
+                <button class="dialogue-right-button">Proceed</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="js/global.js"></script>
+    <script src="js/compression_tool.js"></script>
+</body>
+</html>
