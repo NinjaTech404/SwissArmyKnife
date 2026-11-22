@@ -1,7 +1,8 @@
 /* Dashbaord Customization */
 
 :root{
-    --too-card-container-color: #444;
+    --tool-card-container-color: #444;
+    --link-hover-color: #2F5DB3;
 }
 
 /* Dash Board Content headline */
@@ -43,7 +44,7 @@
     height: auto;
     border-radius: 10px;
     overflow: hidden;
-    background-color: var(--too-card-container-color);
+    background-color: var(--tool-card-container-color);
     display: flex;
     flex-direction: column;
     align-items: left;
@@ -68,12 +69,16 @@
     font-size: 40px;
 }
 
-.tool-card-header > i:last-child{
+.tool-card-header > a{
     position: absolute;
     font-size: 24px;
     right: 0;
     top: 0;
     color: var(--accent-blue);
+}
+
+.tool-card-header > a:hover{
+    color: var(--link-hover-color);
 }
 
 .tool-card-container > span{

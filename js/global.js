@@ -81,4 +81,53 @@ window.addEventListener("load",()=>{
         }, 200);
     });
 
+
+
+    // Loader
+    const loader                   = document.querySelectorAll(".loader");
+    const loader_closing_div_upper = document.querySelectorAll(".loader-closing-animation-upper");
+    const loader_closing_div_lower = document.querySelectorAll(".loader-closing-animation-lower");
+    const loader_container_header  = document.querySelectorAll(".loader-container-header");
+    const loader_container_body    = document.querySelectorAll(".loader-container-body");
+    const loader_container_footer  = document.querySelectorAll(".loader-container-footer");
+
+
+    console.log(loader_closing_div_upper);
+    setTimeout(() => {
+        for(let i = 0; i < loader.length; i++){
+
+            loader_container_header[i].style.transform = "translateY(-1000px)";
+            loader_container_body[i].style.opacity = "0";
+            loader_container_footer[i].style.transform = "translateY(1000px)";
+
+            setTimeout(()=>{
+                loader_closing_div_upper[i].style.transform = "translateY(-1000px)";
+                loader_closing_div_lower[i].style.transform = "translateY(1000px)";
+                setTimeout(()=>{
+                    loader[i].style.display = "none";
+                }, 500);
+            },500);
+        }
+    }, 3000);
+
+
+
+    // Header List Menu
+    const content_header_list_button = document.querySelectorAll(".content-header-list-button");
+    const header_list_menu = document.querySelectorAll(".header-list-menu");
+
+    let toggleMenuList = true;
+    for(let i = 0; i < content_header_list_button.length; i++){
+        content_header_list_button[i].addEventListener("click",()=>{
+            if(toggleMenuList){
+                header_list_menu[i].classList.add("header-list-menu-visible");
+                toggleMenuList = !toggleMenuList;
+            }
+            else{
+                header_list_menu[i].classList.remove("header-list-menu-visible");
+                toggleMenuList = !toggleMenuList;
+            }
+        });
+    }
+
 });
