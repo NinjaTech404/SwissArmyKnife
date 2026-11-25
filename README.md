@@ -4,9 +4,13 @@ A browser-based collection of everyday developer and security utilities, bundled
 
 ## Demo
 
-![Swiss Army Knife Demo](assets/readme/video/demo.gif)
+<div align="center">
 
-> _A quick walkthrough of the dashboard and its tools._
+![Swiss Army Knife Demo](assets/demo.gif)
+
+_A quick walkthrough of the dashboard and its tools._
+
+</div>
 
 ## What It Provides
 
