@@ -6,7 +6,7 @@ A browser-based collection of everyday developer and security utilities, bundled
 
 <div align="center">
 
-![Swiss Army Knife Demo](assets/demo.gif)
+![Swiss Army Knife Demo](assets/readme/video/demo.gif)
 
 _A quick walkthrough of the dashboard and its tools._
 
