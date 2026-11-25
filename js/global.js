@@ -60,13 +60,14 @@ window.addEventListener("load",()=>{
     const dialogue = document.querySelector(".dialogue");
     const dialogue_conatiner = document.querySelector(".dialogue-container");
     const dialogue_cancel_button = document.querySelector(".dialogue-footer > button:first-child");
+    const dialogue_proceed_button = document.querySelector(".dialogue-footer > button:last-child");
     const logout_button = document.querySelector(".logout-button");
 
 
     logout_button.addEventListener("click", ()=>{
         dialogue.style.display = "grid";
-        dialogue.style.opacity = "1";
         setTimeout(() => {
+            dialogue.style.opacity = "1";
             dialogue_conatiner.style.opacity = "1";
             dialogue_conatiner.style.transform = "translateY(0)";
         }, 200);
@@ -76,8 +77,21 @@ window.addEventListener("load",()=>{
         dialogue_conatiner.style.opacity = "0";
         dialogue_conatiner.style.transform = "translateY(1000px)";
         setTimeout(() => {
-            dialogue.style.display = "none";
             dialogue.style.opacity = "0";
+            setTimeout(() => {
+                dialogue.style.display = "none";
+            }, 200);
+        }, 200);
+    });
+
+    dialogue_proceed_button.addEventListener("click", ()=>{
+        dialogue_conatiner.style.opacity = "0";
+        dialogue_conatiner.style.transform = "translateY(1000px)";
+        setTimeout(() => {
+            dialogue.style.opacity = "0";
+            setTimeout(() => {
+                location.assign("index.html");
+            }, 200);
         }, 200);
     });
 
